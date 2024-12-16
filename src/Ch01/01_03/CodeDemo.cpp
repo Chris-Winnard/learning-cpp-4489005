@@ -6,10 +6,11 @@
 #include <string>
 
 int main(){
+    std::cout << "What is your name?" << std::flush;
+    
     std::string str;
     std::cin >> str;
-    std::cout << str;
-
-    std::cout << std::endl << std::endl;
+    std::cout << "Hello " << str << "."<< std::endl<< std::endl;
+    
     return (0);
 }
