@@ -10,11 +10,11 @@ int main(){
     cow *my_cow;
 
     my_cow = new cow("Gurdy", 3, cow_purpose::hide);
-    std::cout << (*my_cow)->get_name() << " is a type-" << (int) my_cow->get_purpose() << " cow." << std::endl;
+    std::cout << my_cow->get_name() << " is a type-" << (int) my_cow->get_purpose() << " cow." << std::endl;
     std::cout << my_cow->get_name() << " is " << my_cow->get_age() << " years old." << std::endl;
     
     delete my_cow;
-    
+
     std::cout << std::endl << std::endl;
     return (0);
 }
