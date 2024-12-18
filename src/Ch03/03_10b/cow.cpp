@@ -5,7 +5,7 @@ cow::cow(std::string name_i, int age_i, cow_purpose purpose_i){
     age = age_i;
     purpose = purpose_i;
 }
-std::string cow::get_name(){
+std::string cow::get_name(){ //Should it be get_name() const{ ?
     return name;
 }
 int cow::get_age(){
