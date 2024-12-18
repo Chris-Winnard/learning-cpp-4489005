@@ -17,7 +17,8 @@ int main(){
     std::cout << "Enter a student ID: " << std::flush;
     std::cin >> id;
 
-    SR.report_card(id);
+    SR.report_card(id); //student name, course names, course grades, GPA.. use the other code to calc GPA..?
+    //get_GPA; get_name, get_grade(?) etc     Create 'report_card' IN SR..?
     
     std::cout << std::endl << std::endl;
     return (0);
