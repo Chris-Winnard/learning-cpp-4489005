@@ -41,3 +41,15 @@ int Grade::get_course_id() const{
 char Grade::get_grade() const{
     return grade;
 }
+
+GradeScore::GradeScore(char grd, int sc){
+    grade = grd;
+    score = sc;
+}
+char GradeScore::get_grade() const{
+    return grade;
+}
+int GradeScore::get_score() const{
+    return score;
+}
+}

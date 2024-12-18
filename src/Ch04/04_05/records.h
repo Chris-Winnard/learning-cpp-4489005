@@ -38,3 +38,15 @@ public:
     int get_course_id() const;
     char get_grade() const;
 };
+
+class GradeScore{
+private:
+    char grade;
+    int score;
+
+public:
+    GradeScore(char grd, char sc);
+    char get_grade() const;
+    int get_score() const;
+};
+

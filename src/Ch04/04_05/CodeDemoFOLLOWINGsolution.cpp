@@ -26,35 +26,11 @@ int main(){
 
     // Calculate the GPA for the selected student.
     // Write your code here
-    std::vector<GradeScore> gradesScore = {GradeScore('A',4),
-                                           GradeScore('B',3),
-                                           GradeScore('C',2),
-                                           GradeScore('D',1),
-                                           GradeScore('F',0)};
 
-    for (auto x : students)
-        if (id == x.get_id())
-            student_str = x.get_name();
-
-    for (auto y : grades[id-1])
-        for (auto z: y.size())
-            course = z.get_name();
-            grade = z.get_grade();
-
-            for (auto a : Courses)
-                if (course == a.get_name();
-                    courseCredits = a.get_credits();
-
-            for (auto b : gradeScore)
-                if (grade == b.get_grade();
-                    grade = b.get_score();        
-
-            value_thisCourse = courseCredits*grade;
-            GPA += value_thisCourse;
-    GPA /= grades[id-1].size();
+    std::string student_str;
+    student_str = students[0].get_name(); // Change this to the selected student's name
 
     std::cout << "The GPA for " << student_str << " is " << GPA << std::endl;
     
     std::cout << std::endl << std::endl;
     return (0);
-}
