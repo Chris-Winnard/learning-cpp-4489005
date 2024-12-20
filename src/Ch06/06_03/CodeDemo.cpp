@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "records.h"
+#include <fstream>
 
 void initialize(StudentRecords&);
 
@@ -14,10 +15,14 @@ int main(){
     
     initialize(SR);
 
-    std::cout << "Enter a student ID: " << std::flush;
-    std::cin >> id;
+    //Don't need this as doing it for all..?
+    //std::cout << "Enter a student ID: " << std::flush;
+    //std::cin >> id;
 
-    SR.report_card(id);
+
+    //SR.report_card(id);  -For loop?
+
+    //
     
     std::cout << std::endl << std::endl;
     return (0);

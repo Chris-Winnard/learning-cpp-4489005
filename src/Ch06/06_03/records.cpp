@@ -1,5 +1,6 @@
 #include "records.h"
 #include <iostream>
+#include <fstream>
 
 Student::Student(int the_id, std::string the_name){
     id = the_id;
@@ -117,3 +118,52 @@ void StudentRecords::report_card(int sid){
         }
     std::cout << "GPA: " << (points / credits) << std::endl;
 }
+
+//Read student name, grades, courses
+//Write report card to report.txt (need to create?)
+
+
+//merge this w/ the above..
+    std::ifstream inFileStudents;
+    std::string student_name;
+    int student_id;
+
+    inFileStudents.open("students.txt");
+
+    std::ifstream inFileCourses;
+    std::string course_name;
+    int course_id;
+    int course_credits;
+
+    inFileCourses.open("courses.txt");
+
+    std::ifstream inFileGrades;
+    std::string ;
+    int student_id_Grades;
+    int course_id_Grades; //Maybe sure this doesn't cause confusion w/ elsewhere!
+    char grade;
+
+    inFileGrades.open("grades.txt");
+
+
+    if (inFileStudents.fail())
+        std::cout << std::endl << "Students file not found!" << std::endl;
+    if (inFileCourses.fail())
+        std::cout << std::endl << "Courses file not found!" << std::endl;
+    if (inFileGrades.fail())
+        std::cout << std::endl << "Grades file not found!" << std::endl;
+    else{
+        while (!inFileStudents.eof()){
+            getline(inFileStudents, student_name);
+            getline(inFileStudents, student_id);
+            student_id = stoi(str);
+            //Here (in this part of the loop) get their grades etc, do rest of report card stuff. maybe append to report card..
+
+            // ...  <- while loop for courses and grades(?) Maybe go through grades, if student IDs match then take course ID, go through courses to get weightings
+
+
+        }
+        inFileStudents.close();
+        inFileCourses.close();
+        inFileGrades.close();
+    }

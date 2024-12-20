@@ -24,7 +24,7 @@ int main(){
             std::cout << number << ", ";
             getline(inFile, str);
             letter = str[0];
-            std::cout << str << std::endl;
+            std::cout << letter << std::endl;
         }
         inFile.close();
     }
