@@ -1,4 +1,6 @@
 #include "records.h"
+#include <iostream>
+#include <vector>
 
 Student::Student(int the_id, std::string the_name){
     id = the_id;
@@ -94,4 +96,35 @@ float StudentRecords::get_GPA(int sid) const{
             points += get_num_grade(grd.get_grade()) * current_credits;
         }
     return (points / credits);
+}
+
+//Modify below for report card..
+void StudentRecords::report_card(int sid) const{ //Student name, course names, letter grades, GPA
+    std::string student_name = "Placeholder";
+    std::vector<std::string> courses_and_grades;
+
+    for (const Student& stdnt : students)
+        if (stdnt.get_id() == sid){
+            std::string student_name = stdnt.get_name();
+        }
+        
+    for (const Grade& grd : grades)
+        if (grd.get_student_id() == sid){
+            char grade_letter = grd.get_grade();
+
+            int cid = grd.get_course_id();
+
+            for (const Course& crs : courses)
+                if (crs.get_id() == cid){
+                    std::string course_name = crs.get_name();
+                    course_name += "   ";
+                    course_name += grade_letter;
+                    courses_and_grades.push_back(course_name);
+                    }}
+    float GPA = get_GPA(sid);
+
+    //Set up for name and GPA now:
+    std::cout << "Name: " << student_name << std::endl;
+    std::cout << "Courses and grades: " << courses_and_grades << std::endl;
+    std::cout << "GPA: " << GPA << std::endl;
 }
