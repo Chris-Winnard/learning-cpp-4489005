@@ -107,7 +107,8 @@ void StudentRecords::report_card(int sid) const{ //Student name, course names, l
         if (stdnt.get_id() == sid){
             std::string student_name = stdnt.get_name();
         }
-        
+    std::cout << "Name: " << student_name << std::endl;
+    std::cout << "Courses and grades: "<< std::endl;
     for (const Grade& grd : grades)
         if (grd.get_student_id() == sid){
             char grade_letter = grd.get_grade();
@@ -117,14 +118,12 @@ void StudentRecords::report_card(int sid) const{ //Student name, course names, l
             for (const Course& crs : courses)
                 if (crs.get_id() == cid){
                     std::string course_name = crs.get_name();
-                    course_name += "   ";
-                    course_name += grade_letter;
-                    courses_and_grades.push_back(course_name);
+                    std::cout << course_name << "     ";
+                    std::cout << grade_letter << std::endl;
                     }}
     float GPA = get_GPA(sid);
 
     //Set up for name and GPA now:
-    std::cout << "Name: " << student_name << std::endl;
-    std::cout << "Courses and grades: " << courses_and_grades << std::endl;
+    
     std::cout << "GPA: " << GPA << std::endl;
 }
